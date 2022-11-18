@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/91a1f38d53.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <title>Farcry-6</title>
+</head>
+<body>
+    <!--Fixed-top-Nav-->
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <a href="#" class="navbar-brand">
+          <div class="container">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAB/CAMAAADLlgV7AAAAgVBMVEUAAAD///9gYGB1dXXOzs5JSUm9vb309PTV1dWQkJC1tbWcnJyCgoImJib4+Pj8/Pzg4ODu7u7o6OjHx8ckJCSAgICMjIzY2NjR0dETExOioqJQUFCwsLBsbGx5eXmpqaktLS0/Pz9kZGRFRUU9PT0cHBw2NjZaWloYGBhOTk4MDAy7i7jLAAAPmklEQVR4nO1d61riMBBdAbkLtFUQRKi4iuv7P+DS69zTAkE/secfaVqSnGRmMpkkf/4ch3g333b7s2Byc8AkCBfRetB+OfIjDc7GcrOe3RgIu/PX7y7f70FrHVpEFJhG84/vLuYvwL47rWIix2zw9t2FvWp8jno1mciw2Hx3ia8WL9FRTGTyarv87mJfI14fj6ciRTf+7qJfG+LOiVSkdNx/d/GvCuszqEiw/u4KXA/adQ0oB8bfXYkrgVtZBLN+J4qiw0zcTdks/u56XAGerdad9rcP/2jel/Yqso3f0fdU4Iow1Bv2cWA6oT42XYOQWWPmnoOl6viI2lXvvawClY7dVxT6SnGrtGcwr/fuqzqmVpct8BVDUReL1hHvz5Xh0blYaa8bcyn0n478xLMUc+FFynrtGPFm7D2f8JW2UOa9xpl7NFa+xL0gdRr7LOdvAG/C4O/Jn1pyv9b0zmNBfwG4vhie9bUNZ6NZBjwC3I6qnFhUYMlWzHteSvk7wOYXU0VE3f3btTebTbv1+lnrk1v6ycamqoslUxe0ud8f1n1qIoXRqHr60aYfjS5V+GsDnRzgTvw5jizf7Gx16/4qG26N27AWuhYXAzNWKkNvG7u+G1Me9xeuxlWAypOgSG7VCkdYuCaGywnJ+wV1+el4Iw02zb3eY90LqyB4sL9N2eh/TYV+MqgoygI157RLV9Fhj457krFZiq3AgDRX2sule6kKi9j6/AvJ18z9nKBdt3tIeanQ2jpMW4lMJx+/sGY/EH3cVsk8+dQgnZnlmyUOyGblzwHqBrn9sz9KWVBYDY35btwiDtC2j4QbPcfkcT1ot25fXp5am9FwYeSyRBWebgy+tHo/ClujWTGm0YOI1nyfq5OQrv4vLfy1S1fp54K7upX2NZ1QzwofxkwCT/Ebr4iJD6fp1KsQKiPht1roGVG+Zmg4IBZJgQrH1LrAnNOhG68PKEfNyJ/fib+GW7amPOFqR9cbyC8cqBkapHhRqejXjsyMmaRTSdyjDJoJ/DQa5FAGzq54NvCyS223ihZhOOt3KxdlWoNhZxaG4SLabr5mGV+1i47yIjFJp1YRmcNaWBs4ZRSdAvo/VUn/ZHGD/povFBvk/6PVjcxZaDziK8drZf2m0gKKSVEcSD+3VB703q0i6niir2uDCmdRHgMZyrQQ4kZTa02LQU0QkRB5SEed474v3grVOL22atiEIjSgrWXDiP/UI2OSfk6Z5830Ft+MtsPucLiaPwuulkHl+6h2io3mg4zDmEPdAFKBDL0fy11WO3P9IGR7IjyTIT20Uox8jLuseLM1c5uTnqQZTMjxopDlh4ybG+jmkFaSYRmOfHbk3M5IqfNLRkski8gBa/G1Q9QpyaQJqonrsS8ygA1IKsh4MF8i3e+1Yg8diXPxS0aXp7KJwrvIgLFGNgYeO1ooCJKHcuR4I6NUSJCSkxE7XkIW4N6RLcMEVdovGTyRxjfFlevgUVxmxj2KidYEd/BUCkJ/ZBTzHEjJybDcmymgFu58Kabgq/NKBpdS1LCstbZRBoLiRtJ0OBJkFySj+DYktETpJNBQfnNmZGX0SgZvbmxK117bKNwmeAVXictB+lMMHI9kzHUy0L6qcHyfOJ6RV6ADYXuv/HuTnlQipcr3RkYyCtjeFjx7ttY2FBRlQ31f8VEhoS2M2xPJyNvwGU8fujoZAc+Agr2RE+4d12s6bGcS6ZYbMYXWQ2REHQX95P1HnALl6OHkw9D8pH+BFUa16MTIBgJSC2mXYIBySIsNingMGaUqRaOur5NR/kS+sczcnuEwCSQNJsRR+kob5FOQIcutAgwirjnZLAjFO9cOm8qRjSnkNdy6GlW0+LlkoLXd3IsPmVIy/pY/8R6gpLxklKIhJjZFjHF98+HlkwyqMuDvl8cvhXdZEyg+JkQ9f3Q2GdAquYCETC36EnFkTsPYKKHinSNen3v2t+eTQSUhpB8dOFU0FFI00l+IpBjX72eT8VKm6ToDdAFZ/2KOKaSqtcA8bHtmM3GfZJDWBMFSeSShihn9orL3CerK+51HMga8akxn3Nh+eOIv0eK08eJNmuCRDBrBViafetRU0udglqi0KuhArlHOJgMETJwlQKaMDDTYzWUzLJz1Q5rQV9Kh45GMHW7K0uJj/rSg/ul4HTKS5XIMtCo3p84moxS4xXQTMrVYIxysRn1VCQeRGYEuSImnI98jGWRXZSE+2ayny8NxXVhjUSSX0OFDfIZ+IhmlXwLkR1ENyJS1PPU5hdr6PuLL3PUGWVIT2SMZWASW5jc1asc1ZpkIG2QcyoEOXY8vhJ81MuINGCKl/INM+TDgvuehWFVCUsrclIWkRPLTIxlY/hS1oBPvluarCYfz3f55rh5shOwRGbaDmpE98eUOAelC6pDgr8jcW5H4YDT5NiKO/hA5lZDpkQzsRcj7wgcp7p5lSoC2jj05tclEFATxyp54IgMZaZBYKAh5NMqhQdDB4WiSYQcpISGeWGWIjMFIYKVsgTDJQCbsVOS9yQwGtkOcmUG3rpm6LIn5zAsZZOkekt0rfZ1ydCCZ4AiNgUyJDV0hwpWQEpMM1JL5E+xdykxAIosCGangGBwys1lMTyOjD38JiWA66U1XDCdoJjmmtSqszC+WUI6UNclAGmvEs+Y1Jw4ZVZTaS4Ey7gKexfSBNxd6OYeAJBwdoro/c0UD3UqPyMgAStEzGei1nUjJJAkeGIZaM/270qMAz9iJh/7WM4oZDKSQSYVyIFbBBhxaauvvC44M9Noba5N89GKNYcZlWkWRB5DAM3bjhsfFpSH/KzbD2yknxabLE8eSkQzCy5CRJaBuk017sGfEjGyzJoWXJ6P17+mA/WaLB/CO/ZWYbr+NhNmRJIOYcoQDI2sqMbkuQkb293iZ65nlcJ0FZhTFRQY7KuZEMt6UD+R1gd+a74Mb5SvSTI45A9Khid3v0ZqC/pSpLGT7ZTVCoUaufRXGWbiyFeBZTB84Y22h4WzfFJ5FtOhf6Y6oD2J49Gjt7aMZGWOIjM1YYK6YyDVM22ytEqniOWsG5yF5xiHRwqeARh4rJupw8vNQrFQ762QgEZtqDchkxZq/YtkWk1ooy5Q5II9v3xS4ax7ZP+WfRrav6xYGtpReQGxGRi5d9gQ1hOyVYE2mzWyQAXM2trBiB/5ThzgKATfFABIVqQnmkQywH1IyUFtl5CD3hfvwLp0MR1V4bV/gLbHa8Jc9M8gAbwaLzkNkvFKLGlU4kQQh/akB0ZdqRI9kwIO08ZHQzAqD+qv7Qgx1mVbaJNB5Bbc39iPkW06tCoMM1i4aGQ98+REyjegf3ejHzWEvqvanNWCSAd9OLWukITIzFpko7p14aqywDOJkmhgDObi5WOFNZJCBCkvfKr8X3XD7BjpR4mjCxqQ6CcdrItlE0SMZoDbTXgzDNJciKHjEfc6EQoWm8pmOxUC9khm3YsnHIAO8y1NapMKF3oNPyHKnU1zsS1Ci8MhsM+uuHsnY00/Br4VoB+c53CIkMoXkD56JkEIzUBdLhhXPish4Yu/Dz4yMwvTFYxKJ4T1rjwNt3P9Ngsxyr4tHMpAV9E7KP+Qvus+006fgIhtqL0kU9hn1SslyR3wXeawlJAAZuD9opi24EsLypU9kLGYp1FNCTIl3+iz/iM9QHSjNhsTC5sVAkznnsejqbhopdZGBIL9Bt7IE202r1R5RH2TeG+V64ZKe1pCWFX4mZBClNsxsqgeUmBeWr2p229l86H3OvKEFTz7JALbXZBdprq6RiHCdlaBLKakyoHdqh+tUB5TmzrEKR2G+GgG/EzKY92OyeKQdqKje+EYgCKWtWHY0n2SQiRKSmHmcF3IxGKErKeQW0gTyoGJ4pu1sqtwyVFjXVWTM2Z8lZLzb2VMobeXAtDR8fZJBNDiKosqFEkpxHBSlO8vkLAP9mTrOKo74Ke2gCjLyfJDQqv440g56z6IA/7VPMkjQI5qP5v5WLELN4BUZdcHrlwMZyvoNBM52gLPtK8i45zXLrAFXyCqxd6tvUUXTeK9kQP0jbOwUy8LI3DDllBZ0oZYNRK+1xuxgA93B4Saj6DSQ0hJ14aB+t4rNcz3HtL8GHGTgaSuKvC3ECNZ7ZsRErHU6qRUQ1yaxhi/+oNKQe8JFRi8uckFaTsbStBD4ODVvKpRl90oGIgCbF4WuxMaF42R5ZcfZq8hUy07e6f2XyDwHGcj1DYnEHSIhJnd/HGq8xyZIXsnQpwjQ8DjRMdUQoko5rAU9dRV2IA3JNfXaWWRMyFXkkA6+rr0yhnWbXd/+HogdNH7J0CfPpSlEdgeYp/zciQ/EIk9NM/mA/RAJlEkkovuUU3Vugs6KOWzgGe7M7ID3wDF9GrB53qSreCEcm7EMOJylVUsRZJ/4xFAbctOZslKGOnyN6wKeNoPRaPDQusBFZvtRdxEGQdgfzuOKrK1Rtz8LesGssx6ffgXVEdAFaTm0ycCeqgEi74ILZVKCvB3NUWwm5EkupGvvaLqy7VDxICiHVaCB0Rxta0O1+GAaxCTnjDX0rWIBKNu0sIa/cH1+NPSTf0plfc+fzNDoGGvGmHbsHXrsXsD97VBNe/C5KmIojLaj0TbSPQxa6AKezDV3hLug+jOQDq7lyNReLIFnBufdxnj9UGM70BTvmGNEVFMJq6V6t/z9Xqg+cLxQV/96EzWoAgup5rL2KqiNjSeudbfpq3NrbB03J6FXQl2SIIq43uFT6r5EYo6de2fsb4Dqwidxa/uKMy0PWOjhuFhhNJfD1YGqw6murVpzMTo9WTC6gKvpCqF5Qvluqthh4/asw9PJO809ffWgKgXu13jb6ms/9vHuZOlOm5o30KBaVNLZ/bTlh+d3HfcoEC5cu6sbUKgaOtZyPo1X3ajTibrbufsGCirX5EpsAwuq2pgqC8S1QWfuNS4NalBCvdBgcrIBdEd98/Y2uQYa1INO9NW9ajAfiyO2pIEKPWzppPtYmRnsOnOggQ59JnG8c4+HP7lORmlgQWdjdtxVXG/cr9hwcRoMp8cxl4CKTzQeqVNhXEzUq3lF3lKyWRGz1sAB62ySoMZEYa9EYTU3654D8wao6dZp5r6vtKgf52bABtWwF71DHtJa4Hmtxl8F8ZcW/CphX4V8QH+7wW6m9+cRv8WvRKMufOClau/pNJj1+7OZM9v0pOliA4kjrlxqhsXFcVdn36cNfgtqg/PQOu1SkwSTxmHuHe1j78HKqWii/i+C5/rRhAUC99lUDc7A7XGBz53GhLosxnV1+WzQxDV/AcbVFy/1B64TPht4xe0gsu7vmzyuamxhbeAZSZjO4yzIVvKmQdhP4nUa2XQ+/gPNe7qaBA4t3gAAAABJRU5ErkJggg==" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav1">
+      <div class="navbar-nav one ms-auto">
+          <div class="nav-item"><a href="#" class="nav-link text-light">Play</a></div>
+          <div class="nav-item"><a href="#" class="nav-link text-light">Shop</a></div>
+          <div class="nav-item"><a href="#" class="nav-link text-light">Explore</a></div>
+          <div class="nav-item"><a href="#" class="nav-link text-light">Help</a></div>
+      </div>
+      <div class="navbar-nav two ms-auto">
+          <div class="nav-item me-2"><a href="#" class="nav-link"><i class="fa-sharp fa-solid fa-magnifying-glass text-light"></i></a></div>
+          <div class="nav-item ms-2"><a href="#" class="nav-link"><i class="fa-solid fa-user text-light"></i></a></div>
+      </div>
+      </div>
+      </div>
+      </nav>
+      <!--Sticky Nav-->
+    <nav class="navbar navbar-expand-lg second-nav navbar-dark">
+       <div class="container">
+         <a href="#" class="navbar-brand"><img class="img-fluid"src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6FAbjRDg0hWR0OTAxMPRn3/6cd1563c915256ee5f3a68cb266cbcbe/FARCRY6_logo_top_nav-ubioriginal-v1emea.png" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav2">
+         <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a href="#" class="nav-link">Post Launch</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Season Pass</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">News and Videos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Community</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">More Games</a></li>
+        </ul>
+        
+        <div class="navbar-nav ms-auto">
+            <div class="nav-item"><button class="btn btn-warning btn-lg">Buy Now</button></div>
+        </div>
+       
+       </div>
+        </div>
+      </nav>
+
+<section class="first-frame">
+<div class="container">
+    <div class="content mt-5 d-flex flex-column mb-5">
+    <h2 class="display-3 d-flex flex-column flex-md-row justify-content-start justify-content-bet">WELCOME</h2>
+    <h4 class="display-6 d-flex flex-column flex-md-row justify-content-end">TO YARA</h2>
+      <p class="blockquote">Embrace the gritty experience of an improvised modern-day guerrilla and take down a Dictator and his son to free Yara.    </p>
+      <p class="blockquote">Now available on Xbox One, Xbox Series X|S, PlayStation®4, PlayStation®5, Stadia, Epic Games and Ubisoft Connect.    </p>
+       <div class="trailer d-flex flex-column align-item-center">
+        <img class="img-thumbnail w-50 align-self-center mb-3 " src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4O1Gd8b5OxgX4Fcvn45mMS/7a948663ef32a968d623befcdebecdab/FC6_FreeWeekend_Collage960x540.jpg" alt="">
+        <button class="btn button  w-50 align-self-center ">WATCH TRAILER</button>
+    </div>
+</div>
+</div>
+</section>
+
+<section class="socials pt-3 pb-3">
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-twitch"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-instagram"></i>
+</section>
+
+<section class="second-frame">
+<div class="content1 me-5">
+    <h2 class="bg-warning p-2">TRUST YOUR LEADER </h2>
+    <p class="blockquote text-light">As the leaders of Yara, my son Diego and I will restore this nation back to its former glory
+    </p>
+</div>
+</section>
+<section class="third-frame">
+    <div class="content1 me-5">
+        <h2 class="bg-warning p-2">BEWARE OF THE DICTATOR </h2>
+        <p class="blockquote text-light">Antón will even sacrifice his own people to forge his paradise, DO NOT TRUST HIM.
+        </p>
+    </div>
+    </section>
+    <section class="fourth-frame">
+        <div class="content2 ms-5">
+            <h2 class="bg-warning p-2">GUERRILLA FIGHTERS DESTROY CAPITOL
+            </h2>
+            <p class="blockquote text-light">Dani Rojas and his band of guerillas are traitors to our great country
+            </p>
+        </div>
+        </section>
+        <section class="fifth-frame">
+            <div class="content2 ms-5">
+                <h2 class="bg-warning p-2">GUERRILLA FIGHTERS DEFEND FREEDOM
+                </h2>
+                <p class="blockquote text-light">We fight to liberate our nation from the oppression of a ruthless tyrant.
+                </p>
+            </div>
+            </section>
+            <section class="sixth-frame">
+                <div class="content1 me-5">
+                    <h2 class="bg-warning p-2">MEET DANI ROJAS
+                    </h2>
+                    <p class="blockquote text-light">Growing up in Yara, Dani has experienced the brutality of Antón's rule firsthand. After barely escaping the regime forces with her life, she joins forces with Libertad, a rag tag group of guerrilla fighters, to liberate her home from Antón's grip and corrupt regime.
+                    </p>
+                </div>
+                </section>
+                <section class="seventh-frame">
+                    <div class="content1 me-5">
+                        <h2 class="bg-warning p-2">MEET DANI ROJAS </h2>
+                        <p class="blockquote text-light">Growing up in Yara, Dani has experienced the brutality of Antón's rule firsthand. After barely escaping the regime forces with his life, he joins forces with Libertad, a rag tag group of guerrilla fighters, to liberate his home from Antón's grip and corrupt regime.
+                        </p>
+                    </div>
+                    </section>
+
+           <section class="eigth-frame bg-dark pb-5">
+              <p class="h2 text-center text-light p-5">GUERRILLA GAMEPLAY</p>
+        
+              <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                
+
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="5000" data-bs-pause="none">
+                    <video autoplay="autoplay" muted="muted" loop="loop">
+                    <source class="d-inline"id ="vid"src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3mFKfhU3pkcVEPYaHsFwWK/aa5f32e23840fd63342d64521764dd8c/FC6_Website_Loop_Weapons_HD.mp4" type="video/mp4">
+                  </video>
+                  <div class="carousel-caption d-none d-md-block mb-5 w-75">
+                    <h5 class="display-5">WEAPONS                    </h5>
+                    <p class="blockquote">Can you imagine dealing a devastating blow with a modified sardine can? For Yaran guerrillas, the answer will always be yes. But resolver weapons are not all you will find in Yara. From a deadly CD launcher to a more classic sniper rifle, there is a weapon for everyone!
+                    </p>
+                  </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000" data-bs-pause="none">
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source class="d-none" id ="vide"src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1YZNpJU8yEEFLX3gEUdq4c/27ffcf299877a8082f71302cb89018e9/FC6_Website_Loop_Backpacks_HD.mp4" type="video/mp4">
+                    </video> 
+                    <div class="carousel-caption d-none d-md-block mb-5 w-75">
+                      <h5 class="display-5">SUPREMO BACKPACKS                      </h5>
+                      <p class="blockquote">Supremo Backpacks are a way to enable one guerrilla to feel like a hundred guerrilla, with each offering a unique "Supremo" ability that will turn the tide in any combat situation.</p>                      
+                  </div>
+                </div>
+                  <div class="carousel-item" data-bs-interval="5000" data-bs-pause="none">
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                    <source class="d-none" id ="vido"src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4FW5bBocyEWkkuEgdK8VXh/60bc69e27c775ecf8b2de0707f4786fb/FC6_Website_Loop_Vehicles_SD.mp4" type="video/mp4">
+                    </video>
+                    <div class="carousel-caption d-none d-md-block mb-5 w-75 bg-transparent">
+                      <h5 class="display-5"> VEHICLES                      </h5>
+                      <p class="blockquote">Unlock and drive unique "Do it Yourself" vehicles. Simply roam around the beautiful world of Yara or activate your weapons and become the biggest threat to Antón's armoured military tanks.</p>                      
+                  </div>
+                  </div>
+              
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+                </div>
+
+
+              <div class="container mt-0">
+                <div class="video-grp">
+                  <div class="vid p-2">
+                    <img class="image-fluid"src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1I9uj7Zm42kRphhSeoFiZK/3c3042e87f7b0f59cd76382a9c846e81/FC6_Website_Weapons.jpg" alt=""  >
+                  </div>
+                  <div class="vide p-2" onclick="vide()">
+                    <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3ZIl6Gn16NWmLkFV5t9cv/29b92f806027c1e3a2502f04ad72f84f/FC6_Website_Backpacks.jpg" alt="" >
+                  </div>
+                  <div class="vido p-2" onclick="vido()">
+                    <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/cr2S5FA2tU6wl9qCLtB0Y/84386c88a6a8e0e8de903966a94cea72/FC6_Website_Vehicles.jpg" alt=""  >
+                  </div>
+                </div>
+              </div>
+                 
+           </section>
+           
+           <section class="ninth-frame">
+            <div class="container">
+            <p class="h2 text-center text-light pt-5">MAIN CHARACTERS</p>
+
+            <p class="blockquote text-light  text-center mb-5">
+              From forced Yaran army recruit to guerrilla leader, become Dani Rojas and fight a corrupt regime to restore the island nation of Yara. Meet a diverse cast of characters along your journey to take down Antón Castillo.
+            </p>
+          </div>
+ 
+          <div id="slider-container">
+            <span class="btn"></span>
+            <div class="slide DaniF shadow-lg  rounded">
+             <p class="display-6 text-light p-3">Dani (Female)</p>
+            </div>
+            <div class="slide DaniM shadow-lg rounded">
+              <p class="display-6 text-light  p-3">Dani (Male)</p>
+            </div>
+            <div class="slide Anton shadow-lg rounded">
+              <p class="display-6 text-light  p-3">Anton Castillo</p>
+            </div>
+            <div class="slide Diego shadow-lg rounded">
+              <p class="display-6 text-light  p-3">Diego Castillo</p>
+            </div>
+            <div class="slide Clara shadow-lg rounded">
+              <p class="display-6 text-light  p-3">Clara Garcia </p>
+            </div>
+            <div class="slide Juan shadow-lg rounded">
+              <p class="display-6 text-light p-3">Juan Cortez</p>
+            </div>
+            <span class="btn"></span>
+          </div>
+               
+</section>
+
+<section class="tenth-frame">
+
+  <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-bs-ride="slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4q5AULrC54lL90ssMOBUgF/253db3ee6fd51c61d19c39021663b7a9/FC6_Website_Screenshot_Guapo.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block p-5">
+          <h1 class="h1">AMIGOS          </h5>
+            <h2 class="h3">GUAPO</h6>
+          <p class="lead">Have you ever seen a crocodile with a golden tooth and a denim vest? The last person who answered "Yes" is not around to testify anymore...          </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/17ynIhHA214rqbvE7EIJnh/15bc1e1c38931693401bcb7b5b9d741e/FC6_Website_Screenshot_Chorizo__1_.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block p-5">
+          <h1 class="h1">AMIGOS          </h5>
+          <h2 class="h3">CHORIZO</h6>
+          <p class="lead">Do not let his cute little wheels fool you. Even though Chorizo is probably the most adorable sausage dog you have ever seen, he's a furious terror on the battlefield.          </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/Ydl8UuSmPmxu1Nwhei0aB/c0bdcaa440d2893fd42a9599feaa356b/Chicharron_background.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block p-5">
+          <h1 class="h1">AMIGOS          </h5>
+            <h2 class="h3">CHICHARRON</h6>
+        
+          <p class="lead">Just as punk on the inside as he is on the outside, Chicharrón is probably the biggest threat to Antón's army. You've been warned.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+           
+<section class="eleventh-frame">
+<div class="seasonpass bg-dark shadow rounded">
+<h1 class="display-4 text-light mb-5">SEASON PASS</h1>
+
+<p class="blockquote text-light mb-5">Embrace the Far Cry legacy and play as the villains with the FAR CRY® 6 Season Pass. In three separate DLC episodes, take control of Vaas Montenegro, Pagan Min and Joseph Seed (all played by the original cast) and fight to escape their twisted minds. In a second offering, travel back to the distant future of 2007 with the critically acclaimed FAR CRY® 3: Blood Dragon, now also on the newest generations of platforms.
+</p>
+
+<button class="btn btn-lg btn-outline-danger">LEARN MORE</button>
+</div>
+</section>
+
+<section class="twelevth-frame pb-5">
+<div class="container pt-5">
+  <div class="heading">
+<p class="h1 text-light d-lg-flex flex-lg-row justify-content-between">LATEST GAME NEWS
+<img class="fire" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAMAAABG8BK2AAAASFBMVEVHcEziABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABbiABaUFoUwAAAAF3RSTlMAumE/6crVWN4KTC+wjiSB8heonvhylFzU2DoAAAPESURBVFjDrVjb2qwgCCXT1A7WdJj1/m+6LzRDo/lnvm97aYawgAVI9LwGNY3G6WXRzoyTGuj39VKrQ7Xcql4/CenXHeLa1/5rIdbgwzL2O024EG2aDdgao7mgvzV6rfl097aDJ+qBnsgP9t3lT+sfGNnlhHNOjvE7sPvkuvmEfflo2XS3fwOA7Y7b9CylSdawq0LcCkzhZFvzIMSn7zPfTJcbvjen27woJdrt2sJtJ6iFc9p0VJITdWnKT9nPurwymt894bKVm/MVLHP5ZZPxiT56V0HEo7cKlbfkr17ShVYuZiVJnwIzv0sqDmUyDRIMO8dyvKOYQQcwdSKgGgBG5kDxNnt5KeJvRW2vAHGCK4jO9EIbD2CpT8wA4Ipr9VN+YUvQCXmkuZLuBjl3tmOxXPNDz9RpRfya89dANAOuEcOtu9AZJWXaU8pBRA1MCv9WUmckIvIiMic/dRECT9lC4ZwnIiW5SQHAOsYo8DAZKiU5S502hYo0dgBQPirjoTJWe0UO4bRKCwC/k19SrmqbabDOXuoiJIMQEOH8AUcMIUVEB258msNriChUYW5O9fcIxSswCjNCyqgoLQis8SaiRdX37nVshGjNeHe3ziGyHKX3NruIp0cyNz2PCwO9FeqvEcnjhoAhV8e4B7DvMWJWHm5mP68onD4CcKRrftwALEFhJqKwvIjamJCDHkSyXQFoWqrtkCw6nCeieSZ6R5WG15X3ob72Jsac54InIhqIFCzZvvhsbmIqo+w9AyeMZN5l5bK1URXEy934Bo5MV1aLpYa4dPhcVGzbEpFfsFODqhzPlcOL8HuVaTwh3t+Ry/y51Xwaw69IhrEskC0OIgt0IxCot7zsjGUy8NQcKm5qoRODYacQEQtVEU2pyYmiq8qsBVQSc5BOSaA5vWaiYLSlwKDxbm47YIlcjcadtuZ+V3HaYiS68JboLA0mGFaxLvyS0zOJZkrPZXLxjOwAV7Y4V/c9cUo/C8yrbEEOoc8fYhhxsTpnfCp3zfVZ8X6CrcCbSgANK3cRhbVln7u6YWOYdXynXVkpvQ1OOOqOLSeAYKur+6Fr9SUIURl/xQRfti7YpT6h0B/dq2hwb8qcMTL3Ni/VEhGxjchbVvGduW4yxk+zxOdJZfyzof1GStkayO31xyW01w/N/qf1lpvK5jd9tqfRTByEnia4x0FIHsvk9Wksk4dEaX0cEuWRVZix/xhZ5QH66eFh+m2cL0aWL8f58nFhskM23w92+v5xQXjqWLdt/fmp4789vPy3Z6D/9ij18xPZP8YWo/QoMswMAAAAAElFTkSuQmCC" alt="">
+</p>
+</div>
+
+<div class="card-group ">
+<div class="card bg-transparent">
+  <img class= "news w-100 h-50 p-3" src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/pNmIGyzBJelfWIAYZnrHE/278093ba1570d55c13d0939666d13247/BrandNewsArticle_summer-ju22_960x540.jpg" alt="">
+ <div class="p-5">
+  <p class="h5 text-warning">SAVE UP TO 60% OFF FAR CRY 6 DURING OUR SUMMER SALE!</p>
+  <p class="lead-footer text-light">22 June 2022  </p>
+  <p class="blockquote text-light">New deals. New exciting adventures. More Fun.  </p>
+  <button class="btn btn-lg btn-outline-danger">READ MORE</button>
+ </div>
+</div>
+<div class="card bg-transparent">
+  <img class=" news w-100 h-50 p-3" src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/1YXAzu2tMplvBwz04ezOVz/e48783ef9d72a1e7b3076b0c43e98f05/FC4_Prime_Giveaway_960x540.jpg" alt="">
+  <div class="p-5">
+    <p class="h5 text-warning">FAR CRY 4 FREE WITH PRIME GAMING UNTIL 1ST JULY    </p>
+    <p class="lead-footer text-light">1 June 2022    </p>
+    <p class="blockquote text-light">Far Cry 4 is available free on PC through Prime Gaming through July 1, making now the perfect time to join the Golden Path and save Kyrat from Pagan Min.    </p>
+    <button class="btn btn-lg btn-outline-danger">READ MORE</button>
+   </div>
+</div>
+<div class="card bg-transparent">
+  <img class=" news w-100 h-50 p-3" src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/pBw7F3XH6Ystwf4Y4zZpm/046034d15c600ac384c9e283fecf3ae9/BrandNewsArticle_legendary-sale-additionals-april22_960x540_FC6.jpg" alt="">
+  <div class="p-5">
+    <p class="h5 text-warning">SAVE UP TO 50% OFF FAR CRY 6 DURING OUR LEGENDARY SALE!    </p>
+    <p class="lead-footer text-light">18 May 2022    </p>
+    <p class="blockquote text-light">Save even more off your cart using code LEGEND22    </p>
+    <button class="btn btn-lg btn-outline-danger">READ MORE</button>
+   </div>
+</div>
+</div>
+
+<div class="">
+  <hr class="text-light ">
+  <button class="  btn btn-lg btn-danger">ALL NEWS</button>
+</div>
+</div>
+</section>
+
+<section class="socials1 pt-3 pb-3 ps-5 pe-5">
+  <p class="lead text-light d-none d-md-inline">Visit Other Social Channels  </p>
+<div>
+  <i class="fa-brands fa-twitter"></i>
+  <i class="fa-brands fa-facebook"></i>
+  <i class="fa-brands fa-twitch"></i>
+  <i class="fa-brands fa-youtube"></i>
+  <i class="fa-brands fa-instagram"></i>
+</div>
+</section>
+
+<footer class="global-footer">
+  <div class="ubi-footer bg-dark order-3 order-md-1">
+      <div class="ubi-logo-footer">
+          <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5RMQ9vwghls0An4wzhKtz7/d2f9af89354d87f10980979ef375b4e0/footer_logo.png" alt="" loading="lazy">
+      </div>
+
+      <div class="ubi-links mb-5 mb-md-0">
+          <a href="#">STORE</a>
+          <a href="#">UBISOFT CONNECT</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">NEWS</a>
+          <a href="#">SUPPORT</a>
+      </div>
+       
+      <div class="ubi-legal mb-5 mb-md-0">
+          <a href="#">CONTACT US</a>
+          <a href="#">PRIVACY</a>
+          <a href="#">TERMS OF USE</a>
+          <a href="#">DO NOT SELL MY DATA</a>
+          <a href="#">SET COOKIES</a>
+      </div>
+  </div>
+
+
+  <div class="mirage-footer order-1 order-md-2">
+    <div class="mirage-logo mb-5">
+      <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/5rH1NpiOeay8SqCjy4uldQ/974043aeed0212597051edceee8f749a/FC6_Logo_Ubisoft_Original-Trademark_website_228x79.png" alt="" loading="lazy">
+    </div>
+
+    <div class="mirage-content">
+       <div class="mirage-studio">
+          <span class="text-light ">Studios</span>
+          <a href="#">UBISOFT TORONTO</a>
+       </div>
+       <div class="mirage-plat">
+          <span class="text-light mb-3 mb-md-0 mt-5 mt-md-0">Platforms</span>
+          <a href="#">PLAYSTATION 5</a>
+          <a href="#">PLAYSTATION 4 </a>
+          <a href="#">XBOX SERIES X|S</a>
+          <a href="#">XBOX ONE</a>
+          <a href="#">UBISOFT CONNECT</a>
+          <a href="#">LUNA</a>
+          <a href="#">EPIC GAMES</a>
+       </div>
+       <div class="mirage-plat">
+        <span class="text-light mb-3 mb-md-0 mt-5 mt-md-0">Platforms</span>
+        <a href="#">AMD</a>
+        <a href="#">MSI</a>
+        <a href="#">CORSAIR</a>
+        <a href="#">TOBII</a>
+        <a href="#">GEFORCENOW</a>
+     </div>
+         </div>
+
+         <p class="lead text-light mt-5">&copy; 2022  Made by Adrin. All Rights Reserved. Assassin’s Creed, Ubisoft, and the Ubisoft logo are registered or unregistered trademarks of Ubisoft Entertainment in the US and/or other countries.</p>
+</div>
+
+
+<div class="lang-esrb order-2 order-md-3 ">
+ <span class=" dropdown mb-md-0 mb-5"><a class=" dropdown-toggle text-ligh" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">English</a>
+ <ul class="dropdown-menu dropdown-menu-dark">
+  <li><a class="dropdown-item text-light" href="#">हिन्दी</a></li>
+  <li><a class="dropdown-item text-light" href="#">Français</a></li>
+  <li><a class="dropdown-item text-light" href="#">Deutsch</a></li>
+  <li><a class="dropdown-item text-light" href="#">русский</a></li>
+  <li><a class="dropdown-item text-light" href="#">Polski</a></li>
+</ul></span>
+
+<div class="esrb row">
+  <div class="col-lg-6 col-md-12">    <img class="image" src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3TWaCi5CyuZBRpzsRP1iy/6384003e7b534b4962db554a21c696bb/esrb-privacy-footer.jpg" alt="ESRB Privacy Certified Logo Seal" loading="lazy">
+  </div>
+  <div class="col-lg-6 col-md-12"><img class="image" src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/agTC2MJtwXLuKCElBhO5b/c1479392b27047c0777a89db1ba3dc33/eng-rp-17-content-descriptors.png" alt="" loading="lazy"></div>
+ 
+
+
+</div>
+
+</div>
+</footer>
+
+<script>
+          $(function(){
+        $(document).scroll(function(){
+          var $nav= $(".second-nav");
+          $nav.toggleClass("sticky-top", $(this).scrollTop()<200);
+          $nav.toggleClass("fixed-top", $(this).scrollTop()>200);
+        });
+      });
+          </script>
+</body>
+</html>
