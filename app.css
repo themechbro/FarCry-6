@@ -517,6 +517,7 @@ display: flex;
         justify-content: space-between;
     }.first-frame{
         height: auto;
+       
     }
     .first-frame h2  {
        font-size: 7rem;
