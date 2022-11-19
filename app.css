@@ -510,3 +510,26 @@ display: flex;
         font-size: 1rem;
     }
 }
+
+@media(min-width:1920px){
+    #slider-container{
+        flex-grow: 10;
+        justify-content: space-between;
+    }.first-frame{
+        height: auto;
+    }
+    .first-frame h2  {
+       font-size: 7rem;
+    }.first-frame p{
+       font-size: 2rem;
+    }.fifth-frame h4{
+        font-size: 5rem;
+    }.first-frame img{
+        width: 75% !important;
+    }.first-frame>.container{
+        display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    }
+}
