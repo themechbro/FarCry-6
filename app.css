@@ -20,9 +20,7 @@ body, html{
     background-image: url("https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/54qsIq3bkXFHu4IlEpZwBg/2530ce38e395a52fbcd01dd8672a23a5/header_fc6.png");
     background-size: cover;
     width: 100%;
-    height: auto;
-    
-  
+    height: auto; 
 }
 .first-frame h2, .first-frame h4{
     font-weight: 700;
@@ -204,12 +202,10 @@ display: flex;
     width:60%;
    margin: auto;
 }.carousel-caption h2{
-    margin-top: -1%;
+    margin-top: -2%;
    font-size: 2.5rem;
     padding-left: 20%;
-    text-decoration: overline 0.46rem;
 }.carousel-caption h1{
-    text-decoration: underline;
     font-size: 4rem;
 }.carousel-caption p{
     font-weight: 600;
@@ -348,6 +344,9 @@ display: flex;
 
 /*Media Queries*/
 @media(max-width:768px){
+    .first-frame{
+        background-position: 22%;
+    }
     .first-frame h2{
         font-size: 2rem;
     }.first-frame h4{
@@ -361,11 +360,19 @@ display: flex;
         padding-top: 80%;
     }.first-frame p{
         font-size: 1rem;
-    }.second-frame, .third-frame, .fourth-frame,.fifth-frame,.sixth-frame, .seventh-frame{
+    }.second-frame, .third-frame, .fourth-frame,.fifth-frame{
         align-items: center;
         justify-content: center;
         height: 100%;
-    }.second-frame p, .third-frame p, .fourth-frame p,.fifth-frame p,.sixth-frame p, .seventh-frame p{
+        background-position: center;
+        
+    }.sixth-frame, .seventh-frame{
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        
+    }
+    .second-frame p, .third-frame p, .fourth-frame p,.fifth-frame p,.sixth-frame p, .seventh-frame p{
         font-size: 1rem;
     }.second-frame h2, .third-frame h2, .fourth-frame h2,.fifth-frame h2,.sixth-frame h2, .seventh-frame h2{
         font-size: 1.5rem;
@@ -386,7 +393,9 @@ display: flex;
         margin-bottom: 5%;
     }.eleventh-frame{
         height: auto;
-        background-position: center;
+        background-position: 75%;
+        height: auto;
+     
     }.card-group{
       display: flex;
       flex-direction: column;
@@ -404,6 +413,24 @@ display: flex;
     height: 40px;
     }.global-footer, .mirage-content{
         flex-direction: column;   
+    }.socials1>div{
+        width:100%;
+    }.carousel-caption{
+        width:60%;
+       margin: auto;
+    }.carousel-caption h2{
+        margin-top: -1%;
+       font-size: 1.5rem;
+        padding-left: 20%;
+
+    }.carousel-caption h1{
+
+        font-size: 2rem;
+    }.carousel-caption p{
+        font-size: 0.5rem;
+        font-weight: 600;
+    }.carousel-caption h5{
+        font-size: 1.5rem;  
     }
 }
 
@@ -422,10 +449,17 @@ display: flex;
         padding-top: 60%;
     }.first-frame p{
         font-size: 1.5rem;
-    }.second-frame, .third-frame, .fourth-frame,.fifth-frame,.sixth-frame, .seventh-frame{
+    }.second-frame, .third-frame, .fourth-frame,.fifth-frame{
         align-items: center;
         justify-content: center;
         height: 100%;
+        background-position: center;
+        
+    }.sixth-frame, .seventh-frame{
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        
     }.second-frame p, .third-frame p, .fourth-frame p,.fifth-frame p,.sixth-frame p, .seventh-frame p{
         font-size: 2rem;
     }.second-frame h2, .third-frame h2, .fourth-frame h2,.fifth-frame h2,.sixth-frame h2, .seventh-frame h2{
@@ -448,6 +482,7 @@ display: flex;
     }.eleventh-frame{
         height: auto;
         background-position: center;
+      
     }.card-group{
       display: flex;
       flex-direction: column;
@@ -465,5 +500,13 @@ display: flex;
     height: 60px;
     }.global-footer, .mirage-content{
         flex-direction: column;   
+    }.socials1>div{
+        width:100%;
+    }
+}
+
+@media(max-width:435px){
+    .second-frame h2, .third-frame h2, .fourth-frame h2, .fifth-frame h2,.sixth-frame h2,.seventh-frame h2,.eigth-frame h2{
+        font-size: 1rem;
     }
 }
